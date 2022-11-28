@@ -30,13 +30,13 @@ const test = async () => {
             order.push(0)
             map[0] = c;
             c += 1
-        }, 1000)),
+        }, 1)),
         new Promise((resolve) => setTimeout(() => {
             resolve('B (slower)'); console.log('B (slower)')
             order.push(1)
             map[1] = c;
             c += 1
-        }, 2000)),
+        }, 2)),
         new Promise((resolve) => setTimeout(() => {
             resolve('C (fast)'); console.log('C (fast)')
             order.push(2)
@@ -50,6 +50,10 @@ const test = async () => {
     const res = values!.map((value, index) =>{
         let counter = 0
         while(counter <= index && index > 0){
+            if(counter === index){
+                console.log("::::: same");
+                return index
+            }
             console.log(":::::: index", index);
             console.log(";;;;;;; in map", map[counter]);
 
