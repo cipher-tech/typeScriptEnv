@@ -8,6 +8,10 @@
 //         console.log("::::: A2", result);
 //         console.log("::::: A3", positionToMove);
 
+import missingInteger from "./algorithem/missingInteger";
+import {missingSimple} from "./algorithem/missingInteger";
+import missingInteger2 from "./algorithem/missingIntOpt";
+
 //         result = [ positionToMove, ...result ]
 //         console.log("::::: A4", result);
 //         console.log(":::::_______________________", );
@@ -69,7 +73,9 @@ const test = async () => {
     return {order, c, map, res}
 
 }
-test()
-    .then(val => {
-        console.log(val);
-    })
+// test()
+//     .then(val => {
+//         console.log(val);
+//     })
+
+console.log(missingSimple([0,1,2,3,4,5,6,7]))
